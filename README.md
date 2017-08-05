@@ -1,2 +1,1 @@
-"# bubbleGame" 
-"# introductionToAlgorithms" 
+"# Introduction-to-Algorithms" 
