@@ -1,1 +1,1 @@
-"# Introduction-to-Algorithms" 
+This repository has all of my algorithms from my computer science class at Ball State University in the spring of 2017. The base code and tests were built by Nicholas Renet. The assignments come from "Introduction to Algorithms" by Cormen, Leiserson, Rivest, and Stein. 
