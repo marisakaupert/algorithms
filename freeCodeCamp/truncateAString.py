@@ -2,54 +2,54 @@ import unittest
 
 
 class Algorithm:
-    def repeat_string_num_times(self, input_string, num):
-        repeated_strings_list = []
-        if input_string == "" or input_string == " " or num < 0:
+    def truncate_string(self, input_string, num):
+        if input_string == "" or num < 0:
             return ""
+        elif len(input_string) <= 3 or num <= 3:
+            return input_string[:num] + '...'
         else:
-            for i in range(num):
-                repeated_strings_list.append(input_string)
-
-        return ''.join(repeated_strings_list)
+            return input_string[:(num-3)] + '...'
 
 
 class TestPath(unittest.TestCase):
-    def test_string_of_letters_1_time(self):
+    def test_phrase_1(self):
         practice = Algorithm()
         self.assertEqual(
-            "abc", practice.repeat_string_num_times("abc", 1))
+            "A-tisket...",
+            practice.truncate_string(
+                "A-tisket a-tasket A green and yellow basket", 11))
 
-    def test_string_of_letters_3_times(self):
+    def test_phrase_2(self):
         practice = Algorithm()
         self.assertEqual(
-            "abcabcabc", practice.repeat_string_num_times("abc", 3))
+            "Peter Piper...",
+            practice.truncate_string(
+                "Peter Piper picked a peck of pickled peppers", 14))
 
-    def test_string_of_letters_4_times(self):
+    def test_phrase_3(self):
+        practice = Algorithm()
+        self.assertEqual("A...", practice.truncate_string("A-", 1))
+
+    def test_phrase_4(self):
         practice = Algorithm()
         self.assertEqual(
-            "abcabcabcabc", practice.repeat_string_num_times("abc", 4))
+            "Ab...", practice.truncate_string("Absolutely Longer", 2))
 
-    def test_symbols_3_times(self):
+    def test_single_word(self):
         practice = Algorithm()
-        self.assertEqual("***", practice.repeat_string_num_times("*", 3))
+        self.assertEqual("Ballr...", practice.truncate_string("Ballroom", 8))
 
-    def test_symbols_8_times(self):
+    def test_single_short_word(self):
         practice = Algorithm()
-        self.assertEqual("********", practice.repeat_string_num_times("*", 8))
+        self.assertEqual("It...", practice.truncate_string("It", 2))
 
     def test_empty_string(self):
         practice = Algorithm()
-        self.assertEqual("", practice.repeat_string_num_times("", 3))
+        self.assertEqual("", practice.truncate_string("", 5))
 
-    def test_string_with_some_spaces(self):
+    def test_negative_input(self):
         practice = Algorithm()
-        self.assertEqual(
-            "m jm jm jm jm jm jm jm jm j",
-            practice.repeat_string_num_times("m j", 9))
-
-    def test_neagtive_num_input(self):
-        practice = Algorithm()
-        self.assertEqual("", practice.repeat_string_num_times("abc", -2))
+        self.assertEqual("", practice.truncate_string("", -3))
 
 if __name__ == '__main__':
     unittest.main()
