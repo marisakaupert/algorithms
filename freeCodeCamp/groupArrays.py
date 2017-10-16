@@ -66,7 +66,5 @@ class TestPath(unittest.TestCase):
             [],
             practice.chuck_array_in_groups([0, 1, 2, 3, 4, 5, 6, 7, 8], -7))
 
-
-
 if __name__ == '__main__':
     unittest.main()
