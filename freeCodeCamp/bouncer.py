@@ -17,7 +17,8 @@ class Algorithm:
 class TestPath(unittest.TestCase):
     def test_mixed_values(self):
         practice = Algorithm()
-        self.assertEqual([7, "ate", 9], practice.bouncer([7, "ate", "", False, 9]))
+        self.assertEqual(
+            [7, "ate", 9], practice.bouncer([7, "ate", "", False, 9]))
 
     def test_no_false_values(self):
         practice = Algorithm()
