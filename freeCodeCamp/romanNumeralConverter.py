@@ -13,7 +13,6 @@ class Algorithm:
         return result
 
 
-
 class TestPath(unittest.TestCase):
     def test_roman_numerals_2(self):
         practice = Algorithm()
