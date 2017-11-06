@@ -22,19 +22,27 @@ class TestingClass(unittest.TestCase):
 
     def test_column_column_copy(self):
         practice = LAFF()
-        self.assertEqual([1, 2, 3], practice.copy(self.vector_x, self.vector_y))
+        self.assertEqual(
+            [1, 2, 3], practice.copy(self.vector_x, self.vector_y))
 
     def test_column_row_copy(self):
         practice = LAFF()
-        self.assertEqual([1, 2, 3], practice.copy(self.vector_x, np.transpose(self.vector_y)))
+        self.assertEqual(
+            [1, 2, 3],
+            practice.copy(self.vector_x, np.transpose(self.vector_y)))
 
     def test_row_column_copy(self):
         practice = LAFF()
-        self.assertEqual([1, 2, 3], practice.copy(np.transpose(self.vector_x), self.vector_y))
+        self.assertEqual(
+            [1, 2, 3],
+            practice.copy(np.transpose(self.vector_x), self.vector_y))
 
     def test_row_row_copy(self):
         practice = LAFF()
-        self.assertEqual([1, 2, 3], practice.copy(np.transpose(self.vector_x), np.transpose(self.vector_y)))
+        self.assertEqual(
+            [1, 2, 3],
+            practice.copy(
+                np.transpose(self.vector_x), np.transpose(self.vector_y)))
 
     def test_column_column_wrong_size_copy(self):
         practice = LAFF()
@@ -42,15 +50,22 @@ class TestingClass(unittest.TestCase):
 
     def test_column_row_wrong_size_copy(self):
         practice = LAFF()
-        self.assertEqual('FAILED', practice.copy(self.vector_x, np.transpose(self.vector_z)))
+        self.assertEqual(
+            'FAILED',
+            practice.copy(self.vector_x, np.transpose(self.vector_z)))
 
     def test_row_column_wrong_size_copy(self):
         practice = LAFF()
-        self.assertEqual('FAILED', practice.copy(np.transpose(self.vector_x), self.vector_z))
+        self.assertEqual(
+            'FAILED',
+            practice.copy(np.transpose(self.vector_x), self.vector_z))
 
     def test_row_row_wrong_size_copy(self):
         practice = LAFF()
-        self.assertEqual('FAILED', practice.copy(np.transpose(self.vector_x), np.transpose(self.vector_z)))
+        self.assertEqual(
+            'FAILED',
+            practice.copy(
+                np.transpose(self.vector_x), np.transpose(self.vector_z)))
 
     def test_empty_vector_x_copy(self):
         practice = LAFF()
