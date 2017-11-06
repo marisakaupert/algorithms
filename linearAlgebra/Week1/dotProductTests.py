@@ -36,7 +36,7 @@ class TestingClass(unittest.TestCase):
         self.assertEqual(
             'FAILED', practice.dotProduct(self.vector_x, self.vector_z))
 
-    def test_column_with_row_vector_dot_wrong_size_product(self):
+    def test_column_with_row_vector_dot_wrong_size_dot_product(self):
         practice = Week1Functions()
         self.assertEqual(
             'FAILED', practice.dotProduct(
