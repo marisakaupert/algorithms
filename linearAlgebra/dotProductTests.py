@@ -15,31 +15,44 @@ class TestingClass(unittest.TestCase):
 
     def test_column_with_row_vector_dot_product(self):
         practice = Week1Functions()
-        self.assertEqual(-8, practice.dotProduct(self.vector_x, np.transpose(self.vector_y)))
+        self.assertEqual(
+            -8, practice.dotProduct(
+                self.vector_x, np.transpose(self.vector_y)))
 
     def test_row_with_column_vector_dot_product(self):
         practice = Week1Functions()
-        self.assertEqual(-8, practice.dotProduct(np.transpose(self.vector_x), self.vector_y))
+        self.assertEqual(
+            -8, practice.dotProduct(
+                np.transpose(self.vector_x), self.vector_y))
 
     def test_row_with_row_vector_dot_product(self):
         practice = Week1Functions()
-        self.assertEqual(-8, practice.dotProduct(np.transpose(self.vector_x), np.transpose(self.vector_y)))
+        self.assertEqual(
+            -8, practice.dotProduct(
+                np.transpose(self.vector_x), np.transpose(self.vector_y)))
 
     def test_column_with_column_vector_wrong_size_dot_product(self):
         practice = Week1Functions()
-        self.assertEqual('FAILED', practice.dotProduct(self.vector_x, self.vector_z))
+        self.assertEqual(
+            'FAILED', practice.dotProduct(self.vector_x, self.vector_z))
 
     def test_column_with_row_vector_dot_wrong_size_product(self):
         practice = Week1Functions()
-        self.assertEqual('FAILED', practice.dotProduct(self.vector_x, np.transpose(self.vector_z)))
+        self.assertEqual(
+            'FAILED', practice.dotProduct(
+                self.vector_x, np.transpose(self.vector_z)))
 
     def test_row_with_column_vector_wrong_size_dot_product(self):
         practice = Week1Functions()
-        self.assertEqual('FAILED', practice.dotProduct(np.transpose(self.vector_x), self.vector_z))
+        self.assertEqual(
+            'FAILED', practice.dotProduct(
+                np.transpose(self.vector_x), self.vector_z))
 
     def test_row_with_row_vector_wrong_size_dot_product(self):
         practice = Week1Functions()
-        self.assertEqual('FAILED', practice.dotProduct(np.transpose(self.vector_x), np.transpose(self.vector_z)))
+        self.assertEqual(
+            'FAILED', practice.dotProduct(
+                np.transpose(self.vector_x), np.transpose(self.vector_z)))
 
     def test_empty_vectors_dot_product(self):
         practice = Week1Functions()
