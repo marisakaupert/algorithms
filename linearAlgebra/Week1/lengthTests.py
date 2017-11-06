@@ -3,7 +3,7 @@ import numpy as np
 from laffFunctions import Week1Functions
 
 
-class TestingClass(unittest.TestCase):
+class LengthTests(unittest.TestCase):
     def setUp(self):
         self.vector_x = [1, 2, 3]
 

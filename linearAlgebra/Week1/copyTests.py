@@ -3,7 +3,7 @@ import numpy as np
 from laffFunctions import Week1Functions
 
 
-class TestingClass(unittest.TestCase):
+class CopyTests(unittest.TestCase):
     def setUp(self):
         self.vector_x = [1, 2, 3]
         self.vector_y = [0, -1, -2]

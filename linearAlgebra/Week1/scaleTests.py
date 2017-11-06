@@ -3,18 +3,21 @@ import numpy as np
 from laffFunctions import Week1Functions
 
 
-class TestingClass(unittest.TestCase):
+class ScaleTests(unittest.TestCase):
     def setUp(self):
         self.vector_x = [1, 2, 3]
         self.alpha = -2
 
     def test_column_vector_scale(self):
         practice = Week1Functions()
-        self.assertEqual([-2, -4, -6], practice.scale(self.alpha, self.vector_x))
+        self.assertEqual(
+            [-2, -4, -6], practice.scale(self.alpha, self.vector_x))
 
     def test_row_vector_scale(self):
         practice = Week1Functions()
-        self.assertEqual([-2, -4, -6], practice.scale(self.alpha, np.transpose(self.vector_x)))
+        self.assertEqual(
+            [-2, -4, -6], practice.scale(
+                self.alpha, np.transpose(self.vector_x)))
 
     def test_illegal_alpha_scale(self):
         practice = Week1Functions()
