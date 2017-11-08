@@ -26,9 +26,31 @@ class Week3Functions(object):
             for item in np.nditer(matrix_A[pivot], order='F'):
                 item = 0
                 current_vector.append(item)
-                np.delete(matrix_A, item)
             A_left.append(current_vector)
             pivot = pivot + 1
 
         zero_matrix = A_left
         return zero_matrix
+
+    def set_to_diagonal_unb(self, matrix_A, vector_x):
+        if matrix_A is None or vector_x is None:
+            return 'FAILED'
+
+        if len(matrix_A) == 0 or len(vector_x) == 0:
+            return []
+
+        out_matrix = []
+        matrix_A = matrix_A.tolist()
+        pivot = 0
+        while len(out_matrix) < len(matrix_A):
+            for inner_vector_index, inner_vector in enumerate(matrix_A):
+                current_vector = []
+                for index, val in enumerate(inner_vector):
+                    if index == pivot:
+                        current_vector.append(vector_x[index])
+                    else:
+                        current_vector.append(0)
+                out_matrix.append(current_vector)
+                pivot = pivot + 1
+
+        return out_matrix
