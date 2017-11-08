@@ -54,3 +54,122 @@ class Week3Functions(object):
                 pivot = pivot + 1
 
         return out_matrix
+
+    def set_to_upper_triangle_matrix(self, matrix_A):
+        if matrix_A is None:
+            return 'FAILED'
+
+        if len(matrix_A) == 0:
+            return []
+
+        out_matrix = []
+        matrix_A = matrix_A.tolist()
+        pivot = 0
+        while len(out_matrix) < len(matrix_A):
+            for inner_vector_index, inner_vector in enumerate(matrix_A):
+                current_vector = []
+                for index, val in enumerate(inner_vector):
+                    if index < pivot:
+                        current_vector.append(0)
+                    else:
+                        current_vector.append(val)
+                out_matrix.append(current_vector)
+                pivot = pivot + 1
+
+        return out_matrix
+
+    def set_to_strictly_upper_triangle_matrix(self, matrix_A):
+        if matrix_A is None:
+            return 'FAILED'
+
+        if len(matrix_A) == 0:
+            return []
+
+        out_matrix = []
+        matrix_A = matrix_A.tolist()
+        pivot = 0
+        while len(out_matrix) < len(matrix_A):
+            for inner_vector_index, inner_vector in enumerate(matrix_A):
+                current_vector = []
+                for index, val in enumerate(inner_vector):
+                    if index <= pivot:
+                        current_vector.append(0)
+                    else:
+                        current_vector.append(val)
+                out_matrix.append(current_vector)
+                pivot = pivot + 1
+
+        return out_matrix
+
+    def set_to_unit_upper_triangle_matrix(self, matrix_A):
+        if matrix_A is None:
+            return 'FAILED'
+
+        if len(matrix_A) == 0:
+            return []
+
+        out_matrix = []
+        matrix_A = matrix_A.tolist()
+        pivot = 0
+        while len(out_matrix) < len(matrix_A):
+            for inner_vector_index, inner_vector in enumerate(matrix_A):
+                current_vector = []
+                for index, val in enumerate(inner_vector):
+                    if index == pivot:
+                        current_vector.append(1)
+                    elif index < pivot:
+                        current_vector.append(0)
+                    else:
+                        current_vector.append(val)
+                out_matrix.append(current_vector)
+                pivot = pivot + 1
+
+        return out_matrix
+
+    def set_to_strictly_lower_triangle_matrix(self, matrix_A):
+        if matrix_A is None:
+            return 'FAILED'
+
+        if len(matrix_A) == 0:
+            return []
+
+        out_matrix = []
+        matrix_A = matrix_A.tolist()
+        pivot = 0
+        while len(out_matrix) < len(matrix_A):
+            for inner_vector_index, inner_vector in enumerate(matrix_A):
+                current_vector = []
+                for index, val in enumerate(inner_vector):
+                    if index >= pivot:
+                        current_vector.append(0)
+                    else:
+                        current_vector.append(val)
+                out_matrix.append(current_vector)
+                pivot = pivot + 1
+
+        return out_matrix
+
+    def set_to_unit_lower_triangle_matrix(self, matrix_A):
+        if matrix_A is None:
+            return 'FAILED'
+
+        if len(matrix_A) == 0:
+            return []
+
+        out_matrix = []
+        matrix_A = matrix_A.tolist()
+        pivot = 0
+        while len(out_matrix) < len(matrix_A):
+            for inner_vector_index, inner_vector in enumerate(matrix_A):
+                current_vector = []
+                for index, val in enumerate(inner_vector):
+                    if index == pivot:
+                        current_vector.append(1)
+                    elif index > pivot:
+                        current_vector.append(0)
+                    else:
+                        current_vector.append(val)
+                out_matrix.append(current_vector)
+                pivot = pivot + 1
+
+        return out_matrix
