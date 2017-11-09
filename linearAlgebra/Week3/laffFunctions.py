@@ -173,3 +173,29 @@ class Week3Functions(object):
                 pivot = pivot + 1
 
         return out_matrix
+
+    def transpose(self, matrix_A, matrix_B):
+        if matrix_A is None or matrix_B is None:
+            return 'FAILED'
+
+        if len(matrix_A) == 0 or len(matrix_B) == 0:
+            return []
+
+        A = matrix_A.tolist()
+        B = matrix_B.tolist()
+        B_out_matrix = []
+        pivot = 0
+        while len(B_out_matrix) < len(B):
+            B_top = []
+            for index, inner_vector in enumerate(A):
+                B_top.append(inner_vector[pivot])
+            pivot = pivot + 1
+            B_out_matrix.append(B_top)
+
+        return B_out_matrix
+
+
+
+
+
+
