@@ -182,10 +182,9 @@ class Week3Functions(object):
             return []
 
         A = matrix_A.tolist()
-        B = matrix_B.tolist()
         B_out_matrix = []
         pivot = 0
-        while len(B_out_matrix) < len(B):
+        while len(B_out_matrix) < len(matrix_B):
             B_top = []
             for index, inner_vector in enumerate(A):
                 B_top.append(inner_vector[pivot])
@@ -194,8 +193,23 @@ class Week3Functions(object):
 
         return B_out_matrix
 
+    def set_symmatric_matrix(self):
+        pass
 
+    def scale_marix(self, matrix_A, alpha):
+        if matrix_A is None or alpha is None:
+            return 'FAILED'
 
+        if len(matrix_A) == 0:
+            return []
 
+        A = matrix_A.tolist()
+        out_matrix = []
+        for inner_vector_index, inner_vector in enumerate(A):
+            current_vector = []
+            for index, value in enumerate(inner_vector):
+                scaled_value = value * alpha
+                current_vector.append(scaled_value)
+            out_matrix.append(current_vector)
 
-
+        return out_matrix
