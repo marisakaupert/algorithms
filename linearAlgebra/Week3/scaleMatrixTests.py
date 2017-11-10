@@ -39,5 +39,6 @@ class SymmetricMatrixTests(unittest.TestCase):
         practice = Week3Functions()
         self.assertEqual('FAILED', practice.scale_marix(self.matrix_A, None))
 
+
 if __name__ == '__main__':
     unittest.main()
